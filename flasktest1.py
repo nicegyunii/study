@@ -5,6 +5,8 @@ Created on 2018/09/05
 '''
 from flask import Flask
 from flask.templating import render_template
+
+
 app = Flask(__name__)
 
 print(__name__)

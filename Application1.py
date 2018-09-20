@@ -5,6 +5,11 @@ Created on 2018/09/05
 '''
 
 import tkinter
+import cx_Oracle
+
+#tns = cx_Oracle.makedsn("10.3.51.26", 1521,"TGRDB")
+#conn = cx_Oracle.connect("HON","NICHIGAS2017HON")
+
 
 class Application(tkinter.Frame):
     '''
@@ -38,3 +43,4 @@ root = tkinter.Tk()
 root.geometry("400x300")
 app = Application(master=root)
 app.mainloop()
+
