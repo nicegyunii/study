@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+
+<link rel='stylesheet' href='../fullcalendar-3.9.0/fullcalendar.css' />
+<script src='../fullcalendar-3.9.0/lib/jquery.min.js'></script>
+<script src='../fullcalendar-3.9.0/lib/moment.min.js'></script>
+<script src='../fullcalendar-3.9.0/fullcalendar.js'></script>
+<script src='../fullcalendar-3.9.0/locale/ja.js'></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+<script type="text/javascript">
+<!--
+$(function () {
+//	alert("aa");
+//	$('#calendar').fullCalendar();
+    var calendar = $('#calendar').fullCalendar(
+    		{
+    		//ヘッダーの設定
+    		header: {
+    		left: 'today month,basicWeek',
+    		center: 'title',
+    		right: 'prev next'
+    		},
+    		                editable: true, // イベントを編集するか
+
+    		allDaySlot: false, // 終日表示の枠を表示するか
+
+    		eventDurationEditable: true, // イベント期間をドラッグしで変更するかどうか
+
+    		slotEventOverlap: false, // イベントを重ねて表示するか
+
+    		selectable: true,
+
+    		selectHelper: true,
+/*
+    		select: function(start, end, allDay) {
+
+    		alert(start.format()+"\\"+end.format()+"||"+allDay[0]);//日の枠内を選択したときの処理
+
+    		},
+*/
+    		select: function(start, end, allDay) {
+    		    $("#mySchedule .modal-title").html('xxxxxxxxx');
+    		    $('#mySchedule').modal('show');
+
+    		    var dt_start = moment(start).format('YYYY-MM-DD hh:mm');
+    		    var dt_end = moment(end).format('YYYY-MM-DD hh:mm');              //달력일자 선택시 작성화면 노출
+    		   },
+
+    		eventClick: function(calEvent, jsEvent, view) {
+
+    		イベントをクリックしたときの処理
+
+    		},
+
+    		droppable: true,// イベントをドラッグできるかどうか
+
+    		events: [
+
+    		{
+
+    		title: 'イベント',
+
+    		start: '2018-09-14'
+
+    		}
+
+    		]
+
+    		}
+
+    		);
+
+});
+//-->
+</script>
+
+</head>
+<body>
+
+
+<div id="calendar"></div>
+<div id="mySchedule">mySchedule</div>
+
+</body>
+</html>
