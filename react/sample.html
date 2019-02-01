@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="app"></div><!-- ←ここに埋め込まれる -->
+ddd
+    <!-- 以下、Reactのプログラム -->
+    <!-- (jsxを使っているのでtext/jsxと書く) -->
+    <script type="text/jsx">
+     var HelloWorld = React.createClass({
+       // <HelloWorld />をレンダリング（表示）
+       render: function() {
+         return (
+           <p>Hello!World!</p>
+         );
+       }
+     });
+
+     // id='app'に<HelloWorld />を埋め込む（マウント）
+     var m = React.render(<HelloWorld />, document.getElementById('app'));
+    </script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </body>
+</html>
